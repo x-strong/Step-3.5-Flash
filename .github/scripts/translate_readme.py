@@ -24,9 +24,9 @@ def main():
         content = f.read()
         
     system_prompt = textwrap.dedent("""
-        You are a professional technical translator. 
-        Translate the following Markdown content from English to Chinese (Simplified). 
-        Maintain all formatting, links, and code blocks exactly as they are. 
+        You are a professional technical translator.
+        Translate the following Markdown content from English to Chinese (Simplified).
+        Maintain all formatting, links, and code blocks exactly as they are.
         Only translate the text content.
         The file is a README for an AI model named 'Step 3.5 Flash'.
     """).strip()

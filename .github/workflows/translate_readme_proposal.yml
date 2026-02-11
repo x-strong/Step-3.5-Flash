@@ -26,10 +26,16 @@ jobs:
         run: |
           python -c "
           import os
+          import sys
           from openai import OpenAI
 
+          api_key = os.environ.get('STEPFUN_API_KEY')
+          if not api_key:
+              print('STEPFUN_API_KEY is not set; skipping README translation step.', file=sys.stderr)
+              sys.exit(0)
+
           client = OpenAI(
-              api_key=os.environ.get('STEPFUN_API_KEY'),
+              api_key=api_key,
               base_url='https://api.stepfun.com/v1'
           )
           

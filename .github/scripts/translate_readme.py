@@ -20,8 +20,15 @@ def main():
         base_url='https://api.stepfun.com/v1'
     )
     
-    with open('README.md', 'r', encoding='utf-8') as f:
-        content = f.read()
+    try:
+        with open('README.md', 'r', encoding='utf-8') as f:
+            content = f.read()
+    except FileNotFoundError:
+        print('ERROR: README.md not found in current directory.', file=sys.stderr)
+        sys.exit(1)
+    except IOError as e:
+        print(f'ERROR: Failed to read README.md: {e}', file=sys.stderr)
+        sys.exit(1)
         
     system_prompt = textwrap.dedent("""
         You are a professional technical translator. 
@@ -39,10 +46,21 @@ def main():
         ]
     )
     
+    if not response.choices or len(response.choices) == 0:
+        print('ERROR: API returned empty response.', file=sys.stderr)
+        sys.exit(1)
+        
     translated_content = response.choices[0].message.content
+    if not translated_content:
+        print('ERROR: API returned empty translation.', file=sys.stderr)
+        sys.exit(1)
     
-    with open('README.zh-CN.md', 'w', encoding='utf-8') as f:
-        f.write(translated_content)
+    try:
+        with open('README.zh-CN.md', 'w', encoding='utf-8') as f:
+            f.write(translated_content)
+    except IOError as e:
+        print(f'ERROR: Failed to write README.zh-CN.md: {e}', file=sys.stderr)
+        sys.exit(1)
     
     print('README.md successfully translated to README.zh-CN.md')
 

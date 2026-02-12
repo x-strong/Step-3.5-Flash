@@ -13,6 +13,13 @@ base_model:
     <a href="README.md">English</a>&nbsp; | &nbsp;<strong>简体中文</strong>
 </p>
 
+
+<p align="center">
+    <a href="./cookbooks/openclaw">OpenClaw 指南</a>&nbsp; | &nbsp;<a href="./cookbooks/claude-code-best-practices">Claude Code 指南</a>&nbsp; | &nbsp;<a href="./cookbooks/roo-code-integration-guide">Roo Code 指南</a>&nbsp; | &nbsp;<a href="./cookbooks/hybrid-local-agent-macos">本地 Agent 指南</a>
+</p>
+
+
+
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20HF-StepFun/STEP3p5-preview)](https://huggingface.co/stepfun-ai/Step-3.5-Flash/tree/main)
 [![ModelScope](https://img.shields.io/badge/ModelScope-StepFun/STEP3p5-preview)](https://modelscope.cn/models/stepfun-ai/Step-3.5-Flash)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/RcMJhNVAQc)

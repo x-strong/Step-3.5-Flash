@@ -20,6 +20,7 @@ base_model:
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)]()
 [![Chat with the model on OpenRouter](https://img.shields.io/badge/Chat%20with%20the%20model-OpenRouter-5B3DF5?logo=chatbot&logoColor=white)](https://openrouter.ai/chat?models=stepfun/step-3.5-flash:free)
 [![Chat with the model on HuggingfaceSpace](https://img.shields.io/badge/Chat%20with%20the%20model-HuggingfaceSpace-5B3DF5?logo=chatbot&logoColor=white)](https://huggingface.co/spaces/stepfun-ai/Step-3.5-Flash)
+[![OpenClaw Integration](https://img.shields.io/badge/Agent-OpenClaw-purple?logo=robot&logoColor=white)](./cookbooks/openclaw)
 
 </div>
 
@@ -62,7 +63,8 @@ Performance of Step 3.5 Flash measured across **Reasoning**, **Coding**, and **A
 | Benchmark | Step 3.5 Flash | DeepSeek V3.2 | Kimi K2 Thinking / K2.5 | GLM-4.7 | MiniMax M2.1 | MiMo-V2 Flash |
 | --- | --- | --- | --- | --- | --- | --- |
 | # Activated Params | 11B | 37B | 32B | 32B | 10B | 15B |
-| # Total Params (MoE) | 196B | 671B | 1T | 355B | 230B | 309B |
+| # Total Params (MoE) | 196B |
+ 671B | 1T | 355B | 230B | 309B |
 | Est. decoding cost @ 128K context, Hopper GPU** | **1.0x**<br>100 tok/s, MTP-3, EP8 | **6.0x**<br>33 tok/s, MTP-1, EP32 | **18.9x**<br>33 tok/s, no MTP, EP32 | **18.9x**<br>100 tok/s, MTP-3, EP8 | **3.9x**<br>100 tok/s, MTP-3, EP8 | **1.2x**<br>100 tok/s, MTP-3, EP8 |
 | | | | **Agent** | | | |
 | τ²-Bench | 88.2 | 80.3 (85.2*) | 74.3*/85.4* | 87.4 | 86.6* | 80.3 (84.1*) |
@@ -125,8 +127,8 @@ You can get started with Step 3.5 Flash in minutes using Cloud API via our suppo
 [OpenRouter](https://openrouter.ai) provides uniform access to Step 3.5 Flash with both free and paid tiers.
 
 **Models:**
-- **Free Tier:** `stepfun/step-3.5-flash:free`
-- **Standard Tier:** `stepfun/step-3.5-flash`
+- **Free Tier:** [`stepfun/step-3.5-flash:free`](https://openrouter.ai/stepfun/step-3.5-flash:free)
+- **Standard Tier:** [`stepfun/step-3.5-flash`](https://openrouter.ai/stepfun/step-3.5-flash)
 
 **Configuration:**
 - **Base URL:** `https://openrouter.ai/api/v1`
@@ -143,7 +145,12 @@ StepFun offers official API endpoints for both International and Chinese users.
 
 > **Note:** China platform requires +86 phone number verification.
 
-### 5.3 Implementation Example
+### 5.3 OpenClaw (Recommended)
+
+For a full agentic experience, we recommend using [OpenClaw](https://openclaw.ai).
+👉 **[View the OpenClaw Cookbook](./cookbooks/openclaw)** to get started in minutes.
+
+### 5.4 Implementation Example
 
 Install the standard OpenAI SDK (compatible with both platforms):
 
@@ -162,7 +169,8 @@ from openai import OpenAI
 # model = "stepfun/step-3.5-flash"
 
 # Configuration for StepFun (International)
-base_url = "https://api.stepfun.ai/v1"
+base_url = "https://api.stepfun.ai/v1" 
+# For China: base_url = "https://api.stepfun.com/v1"
 api_key = "your-stepfun-api-key"
 model = "step-3.5-flash"
 
@@ -370,16 +378,20 @@ cmake --build build-vulkan -j8
 
 > **Note:** As mentioned in the [Quick Start](#5-quick-start), you can access Step 3.5 Flash via **OpenRouter** or the **StepFun Platform**. Choose the base URL and API key corresponding to your preferred provider when configuring these agents.
 
-### 7.1 OpenClaw
+### 7.1 OpenClaw (Recommended)
 
-[OpenClaw](https://openclaw.ai) is a powerful agentic platform that works seamlessly with Step 3.5 Flash.
+[OpenClaw](https://openclaw.ai) is a powerful agentic platform that works seamlessly with Step 3.5 Flash. 
+Step 3.5 Flash is a perfect fit for OpenClaw due to its high speed and strong agentic capabilities (maintaining deep reasoning and consistency during execution).
 
 **Quick Setup:**
 1. **Install:** `curl -fsSL https://openclaw.ai/install.sh | bash`
 2. **Onboard:** Run `openclaw onboard`.
 3. **Configure:** In WebUI (`Config` -> `Models`), add a new provider:
-   - **Type:** `openai-completions` -> **Base URL:** `https://api.stepfun.ai/v1`
-   - **Model ID:** `step-3.5-flash` (Context: `256000`)
+   - **Type:** `openai-completions`
+   - **Base URL:**
+     - **StepFun:** `https://api.stepfun.ai/v1` (International) or `https://api.stepfun.com/v1` (China)
+     - **OpenRouter:** `https://openrouter.ai/api/v1`
+   - **Model ID:** `step-3.5-flash` (or `stepfun/step-3.5-flash` for OpenRouter)
 
 For a full walkthrough, see our [OpenClaw Cookbook](./cookbooks/openclaw).
 

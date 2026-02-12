@@ -13,13 +13,16 @@ Whether it's a simple API integration, a guide on connecting with frameworks lik
 Here are the currently available cookbooks and integration guides:
 
 - **[Hybrid Local Agent on MacOS](./hybrid-local-agent-macos)**  
-  Build a fully local, privacy-first Agentic Sandbox on MacOS. This example uses a hybrid architecture with **Step 3.5 Flash** as the "Brain" for complex reasoning and **Qwen 2.5 Coder** as a local "Janitor" for high-volume tasks.
+  Build a privacy-first, local agentic sandbox on MacOS. This guide demonstrates a hybrid architecture using **Step 3.5 Flash** for high-level reasoning and **Qwen 2.5 Coder** for high-volume tasks.
 
-- **[OpenClaw Integration](./openclaw)**  
-  A comprehensive guide for installing, configuring, and deploying **OpenClaw** on MacOS. Learn how to set up the agent platform and integrate it efficiently.
+- **[OpenClaw Integration](./openclaw)** (Recommended)
+  The recommended agent platform for Step 3.5 Flash. Learn to install, configure, and deploy **OpenClaw** for a seamless, powerful agentic experience.
 
 - **[Roo Code Integration](./roo-code-integration-guide)**  
-  A tutorial on configuring **Step 3.5 Flash** as the backend for **Roo Code** (VS Code extension). Combine the reasoning power of Flash with Roo Code's autonomous capabilities for a powerful pair-programming experience.
+  Configure **Step 3.5 Flash** as the backend for **Roo Code** (VS Code extension). Combines Flash's reasoning capabilities with Roo Code's autonomous coding features.
+
+- **[Claude Code Best Practices](./claude-code-best-practices)**
+  Master **Claude Code** with Step 3.5 Flash. Covers environment setup, `CLAUDE.md` configuration, MCP integration, and Sub-agents for an optimized workflow.
 
 
 ## How to Add a Cookbook

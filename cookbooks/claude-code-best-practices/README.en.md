@@ -6,18 +6,20 @@
 
 ## Overview
 
-This document provides a comprehensive guide and best practices for using Claude Code with Step 3.5 Flash. By writing effective CLAUDE.md configurations, setting up MCP services, Skills plugins, and Sub-agents, you can significantly enhance AI Agent development efficiency and intelligence.
+## Overview
 
-**Target Audience**:
-- Software engineers using Claude Code for development
-- Data analysts and researchers needing AI assistance
-- Teams looking to optimize AI Agent workflows
+Master **Claude Code** with **Step 3.5 Flash**. This guide covers environment setup, `CLAUDE.md` optimization, MCP integration, Skills, and Sub-agents to build powerful AI workflows.
 
-**What You'll Learn**:
-- How to configure Claude Code with Step 3.5 Flash
-- How to write effective CLAUDE.md configuration files
-- Practical use cases for MCP, Skills, and Sub-agents
-- Tips for improving development efficiency
+**Perfect for:**
+-   Software Engineers using Claude Code
+-   Data Analysts needing AI assistance
+-   Teams scaling AI Agent adoption
+
+**Key Topics:**
+-   Connecting Claude Code to Step 3.5 Flash
+-   Writing effective `CLAUDE.md` configurations
+-   Applying MCP (Model Context Protocol)
+-   Building custom Skills and Sub-agents
 
 ---
 

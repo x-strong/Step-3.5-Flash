@@ -249,11 +249,14 @@ vllm serve <MODEL_PATH_OR_HF_ID> \
 ### 6.2 SGLang
 
 1. Install SGLang.
+
+Step 3.5 Flash requires `sglang` `main` with [PR #18084](https://github.com/sgl-project/sglang/pull/18084) included (for example commit `980d293`, or any newer `main` commit containing it). We recommend using the Docker image directly.
+
 ```bash
-# via Docker
+# via Docker (recommended)
 docker pull lmsysorg/sglang:dev-pr-18084
-# or from source (pip)
-pip install "sglang[all] @ git+https://github.com/sgl-project/sglang.git"
+# or from source (pip, pinned to commit 980d293)
+pip install "sglang[all] @ git+https://github.com/sgl-project/sglang.git@980d293"
 ```
 
 2. Launch the server.

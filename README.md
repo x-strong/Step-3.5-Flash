@@ -334,8 +334,12 @@ print(output_text)
 - Runtime Overhead: ~7 GB
 - Minimum VRAM: 120 GB (e.g., Mac studio, DGX-Spark, AMD Ryzen AI Max+ 395)
 - Recommended: 128GB unified memory
+#### Notes
+- llama.cpp build **must include** [PR #19283](https://github.com/ggml-org/llama.cpp/pull/19283)
+- If you encounter tool calling issues on llama.cpp mainline, try building with: [PR #18675](https://github.com/ggml-org/llama.cpp/pull/18675)
+- Community GGUF quantizations: [Step-3.5-Flash Quant Collection](https://huggingface.co/ubergarm/Step-3.5-Flash-GGUF#quant-collection)
 #### Steps
-1. Use official llama.cpp:
+1. Use official llama.cpp
 > the folder `Step-3.5-Flash/tree/main/llama.cpp` is **obsolete**
 ```bash
 git clone https://github.com/ggml-org/llama.cpp

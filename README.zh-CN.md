@@ -331,7 +331,10 @@ print(output_text)
 - 运行时开销：~7 GB
 - 最小显存：120 GB（如 Mac Studio、DGX-Spark、AMD Ryzen AI Max+ 395）
 - 推荐：128GB 统一内存
-
+#### 说明
+- llama.cpp 使用版本需包含以下 [PR #19283](https://github.com/ggml-org/llama.cpp/pull/19283)
+- 如果在使用中出现tool call相关问题，可以尝试 [PR #18675](https://github.com/ggml-org/llama.cpp/pull/18675)
+- 此外还有社区的一些不错的量化版本: [Step-3.5-Flash Quant Collection](https://huggingface.co/ubergarm/Step-3.5-Flash-GGUF#quant-collection)
 #### 步骤
 1. 使用官方 llama.cpp:
 > `Step-3.5-Flash/tree/main/Llama.cpp` 已废弃
@@ -374,7 +377,7 @@ cd llama.cpp
    ```bash
    ./llama-cli -m step3.5_flash_Q4_K_S.gguf -c 16384 -b 2048 -ub 2048 -fa on --temp 1.0 -p "你叫什么名字？"
    ```
-7. 使用 llama-batched-bench 测试性能：
+7. 使用 llama-batched-bench 测试性能（[Benchmark details](llama.cpp/docs/step3.5-flash_zh.md)）：
    ```bash
    ./llama-batched-bench -m step3.5_flash_Q4_K_S.gguf -c 32768 -b 2048 -ub 2048 -npp 0,2048,8192,16384,32768 -ntg 128 -npl 1
    ```

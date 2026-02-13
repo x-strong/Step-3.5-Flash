@@ -17,8 +17,8 @@ Download the Q4_K_S quantized GGUF weight file [Step3.5-Flash](https://huggingfa
 Use llama.cpp:
 
 ```bash
-git clone git@github.com:stepfun-ai/Step-3.5-Flash.git
-cd Step-3.5-Flash/llama.cpp
+git clone https://github.com/ggml-org/llama.cpp
+cd llama.cpp
 ```
 
 ---

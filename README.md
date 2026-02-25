@@ -219,7 +219,7 @@ pip install -U vllm --pre \
 
 # or via pip 
 pip install -U vllm==0.15.1
-cd /path/to/lib/python3.12/site-packages # replace with your installation path
+cd /path/to/lib/python3.12/site-packages # Replace with the parent dir of vLLM installation path.
 git apply step3.5_vllm_v0.15.1.patch
 ```
 

@@ -224,6 +224,9 @@ git apply step3.5_vllm_v0.15.1.patch
 ```
 
 2. Launch the server.
+
+**Note**: Full MTP3 support is not yet available in vLLM. We are actively working on a Pull Request to integrate this feature, which is expected to significantly enhance decoding performance.
+
   - For fp8 model
 ```bash  
 vllm serve <MODEL_PATH_OR_HF_ID> \

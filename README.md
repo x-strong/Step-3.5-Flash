@@ -215,7 +215,7 @@ pip install -U vllm --pre \
 
 **Note**: Full MTP3 support is not yet available in vLLM. We are actively working on a Pull Request to integrate this feature, which is expected to significantly enhance decoding performance.
 
-**Note**: Bug fixes for tool parser and reasoning parser, as well as support for the `v1/messages` interface, are being merged into vLLM. In the meantime, you can use the `vllm/vllm-openai:v0.15.1` image with `step3.5_vllm_v0.15.1.patch` for deployment.
+**Note**: Bug fixes for tool parser and reasoning parser, as well as support for the `v1/messages` interface, are being merged into vLLM. In the meantime, you can use the `vllm/vllm-openai:v0.15.1-x86_64` image with `step3.5_vllm_v0.15.1.patch` for deployment.
 
   - For fp8 model
 ```bash  

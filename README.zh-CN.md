@@ -205,6 +205,18 @@ Step 3.5 Flash 优化本地推理，支持行业标准后端：vLLM、SGLang、H
      --extra-index-url https://wheels.vllm.ai/nightly
    ```
 
+   **注意**：tool parser和reasoning parser的bug修复，以及 `v1/messages` 接口的支持正在合入vLLM，在此期间，您可以使用`vllm/vllm-openai:v0.15.1-x86_64`镜像，配合`step3.5_vllm_v0.15.1.patch`部署，有下列两种方式：
+   ```bash 
+   # 通过 Docker
+   # 参考 "step3.5_vllm_v0.15.1.Dockerfile"
+
+   # 或通过 pip（v0.15.1 版本）
+   pip install -U vllm==0.15.1
+   cd /path/to/lib/python3.12/site-packages # 替换为vLLM安装路径的上级目录
+   git apply step3.5_vllm_v0.15.1.patch
+   ```
+     
+
 2. 启动服务。
 
    **注意**：vLLM 尚未完全支持 MTP3。我们正在积极开发 Pull Request 以集成此功能，预计将显著提升解码性能。
